@@ -1,0 +1,133 @@
+<h1 class="DashHeader">Dashboard</h1>
+
+<div class="dash-container">
+    <div class="search-container">
+        <mat-card>
+            <input type="search" Social Name="Social Name" id="inputID" [(ngModel)]="query" class="form-control query"
+                [placeholder]="'User search by ' + type + '...'" value="" title="" (keyup.enter)="searchDb()"
+                required="required">
+
+            <div class="button-row">
+                <button mat-stroked-button color="primary" (click)="searchDb()">Search</button>
+                <button mat-stroked-button (click)="query = ''">Clear</button>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="button-container">
+        <mat-radio-group aria-label="mat-radio-group">
+            <mat-radio-button (click)="searchType('Hutch ID')" [class.active]="type === 'Hutch ID'" Social
+                Name="options" id="option1" value="1">Hutch ID
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Facebook ID')" [class.active]="type === 'Facebook ID'" Social
+                Name="options" id="option2" value="2">Facebook ID
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Google ID')" [class.active]="type === 'Google ID'" Social
+                Name="options" id="option3" value="3">Google ID
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Apple ID')" [class.active]="type === 'Apple ID'" Social
+                Name="options" id="option4" value="4">Apple ID
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Device ID')" [class.active]="type === 'Device ID'" Social
+                Name="options" id="option5" value="5">Device ID
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Google Receipt ID')" [class.active]="type === 'Google Receipt ID'"
+                Social Name="options" id="option6" value="6">
+                Google
+                Receipt Id
+            </mat-radio-button>
+            <mat-radio-button (click)="searchType('Social Name')" [class.active]="type === 'Social Name'" Social
+                Name="options" id="option7" value="7">Social Name
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="config-container">
+        <mat-grid-list cols="4" rowHeight="400px" gutterSize="1em">
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-title>Offers and Events
+                        <mat-icon>book_online</mat-icon>
+                    </mat-card-title>
+                    <br>
+                    <mat-card-content>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod nostrum nihil autem explicabo
+                            natus. Neque alias ex voluptatem quisquam beatae voluptates illum dolor. Officiis accusamus
+                            vitae accusantium, quae eligendi repellendus?
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-card-actions>
+                            <button mat-stroked-button color="primary">Offers</button>
+                            <button mat-stroked-button>Schedule</button>
+                        </mat-card-actions>
+                    </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-title>A/B Test Data
+                        <mat-icon>leaderboard</mat-icon>
+                    </mat-card-title>
+                    <br>
+                    <mat-card-content>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod nostrum nihil autem explicabo
+                            natus. Neque alias ex voluptatem quisquam beatae voluptates illum dolor. Officiis accusamus
+                            vitae accusantium, quae eligendi repellendus?
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-card-actions>
+                            <button mat-stroked-button color="primary">Data</button>
+                        </mat-card-actions>
+                    </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-title>View Logs
+                        <mat-icon>login</mat-icon>
+                    </mat-card-title>
+                    <br>
+                    <mat-card-content>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod nostrum nihil autem explicabo
+                            natus. Neque alias ex voluptatem quisquam beatae voluptates illum dolor. Officiis accusamus
+                            vitae accusantium, quae eligendi repellendus?
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-card-actions>
+                            <button mat-stroked-button color="primary">Logs</button>
+                        </mat-card-actions>
+                    </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-title>Localization
+                        <mat-icon>explore</mat-icon>
+                    </mat-card-title>
+                    <br>
+                    <mat-card-content>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod nostrum nihil autem explicabo
+                            natus. Neque alias ex voluptatem quisquam beatae voluptates illum dolor. Officiis accusamus
+                            vitae accusantium, quae eligendi repellendus?
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-card-actions>
+                            <button mat-stroked-button color="primary">Versions</button>
+                        </mat-card-actions>
+                    </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

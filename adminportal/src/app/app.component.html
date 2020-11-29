@@ -1,4 +1,39 @@
-<h1>{{title}}</h1>
-<div>
-    <router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>{{title}}</span>
+        <span class="spacer"></span>
+        <ng-container *ngIf="auth|async">
+            <section>
+                <div class="button-row">
+                    <button mat-flat-button routerLink="/dashboard">Dashboard</button>
+
+                    <button mat-raised-button color="warn"
+                        (click)="errorService.setError({ message: 'error', stackTrace: '{stackTrace}'})">
+                        Create Error
+                    </button>
+
+                    <button mat-flat-button routerLink="/logout">Logout</button>
+                </div>
+            </section>
+        </ng-container>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="alert-container">
+    <div *ngIf="error|async as err">
+        <h2>
+            {{ err.message }}
+            <mat-icon>warning</mat-icon>
+        </h2>
+        <p>
+            <code>{{ err.stackTrace }}</code>
+        </p>
+        <br>
+        <button mat-raised-button (click)="errorService.clear()">
+            Dismiss
+        </button>
+        <br>
+    </div>
 </div>
+
+<router-outlet></router-outlet>

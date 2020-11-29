@@ -1,0 +1,14 @@
+<div>
+    <select [(ngModel)]="apiVersion" (ngModelChange)="onApiVersionChange(apiVersion)" class="btn btn-primary"
+        id="apiVersion" name="apiVersion">
+        <option *ngFor="let v of apiVersions" [ngValue]="v">API v{{ v }}</option>
+    </select>
+
+    <select [(ngModel)]="dataVersion" (ngModelChange)="onDataVersionChange(dataVersion)" class="btn btn-info">
+        <option *ngFor="let v of dataVersions" [ngValue]="v">Data v{{ v }}</option>
+    </select>
+
+    <span class="ver">
+        Ver&nbsp;&nbsp;<span class="badge badge-light">{{ ver }}</span>
+    </span>
+</div>

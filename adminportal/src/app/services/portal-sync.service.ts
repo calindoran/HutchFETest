@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { PortalSync } from '../interfaces/responses/PortalSync';
 import { MockPortalSync } from '../mockdata/PortalSync';
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
+
+import {ApiService} from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PortalSyncService {
+export class PortalSyncService extends ApiService {
 
-  constructor() { }
+  // constructor() { }
 
-  getPortalSync(appVersion: string, dataVersion: string, adminToken: string): Observable<PortalSync> {
-    return of(MockPortalSync);
+  getData(): Observable<PortalSync> {
+    return this.fetch(MockPortalSync);
   }
 }

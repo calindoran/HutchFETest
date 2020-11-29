@@ -3,14 +3,16 @@ import { StaticData } from '../interfaces/responses/StaticData';
 import { MockStaticData } from '../mockdata/StaticData';
 import { Observable, of } from 'rxjs';
 
+import {ApiService} from './api.service';
+
 @Injectable({
   providedIn: 'root'
 })
-export class StaticDataService {
+export class StaticDataService extends ApiService {
 
-  constructor() { }
+  // constructor() { }
 
-  getStaticData(appVersion: string, dataVersion: string, adminToken: string): Observable<StaticData> {
-    return of(MockStaticData);
+  getData(): Observable<StaticData> {
+    return this.fetch(MockStaticData);
   }
 }
